@@ -1,0 +1,19 @@
+(xen_api_env) infics@infics-praveen-odl:~/praveen_BKP/Xen_SDK_Codes_BKP$ ./custom_list_vms.py http://172.27.3.50 root MY_PASSWORD
+Server has 122 VM objects including templates.
+Given below is list of non-template vm objects:
++--------------------------------------+--------------------+
+|                 UUID                 |      VM Name       |
++--------------------------------------+--------------------+
+| d6ed8982-3fba-3f45-79f6-34c367ddeab2 |    T-4-Compute2    |
+| 652ccff8-2677-6aaf-f3db-e66eed1a0d5b |   Ubuntu_14_ODL    |
+| 960aa56a-fa0b-7361-3547-5300afe0a62e |    CentOS7_AIO     |
+| 71ae4f57-58ad-cfde-ef76-77a5a3dfca71 | T-4-Open Day Light |
+| 2fd4d647-c965-2ce1-f6b8-0cc294a250f4 |   Ubuntu14_flv2    |
+| 557346ef-737e-a027-ce24-ce9ad309e381 |    ubunt14_flv1    |
+| 4f023993-fa7e-2fdf-86a1-0dc04ecf8eac |   T-4-Controller   |
+| fc787f66-c774-91ce-840e-ecf278c9a4e8 |    T-4-Compute1    |
+| 6afa4718-443e-b83b-e14f-29b7b93fed75 |     T-4-Swift      |
+| e68b8e52-d239-bdcb-efe0-748b9538aedd |     Ubuntu ODL     |
+| 7d660343-fd65-7dff-db80-203f4967e78c |     T-4-Cinder     |
+| 0d296b6c-fbf5-1378-123c-cc3441f9e616 |  CentOS7_Compute   |
++--------------------------------------+--------------------+
