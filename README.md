@@ -31,12 +31,8 @@ Replace IP with your XenServer IP address and USER & PASSWORD with login usernam
 
 Example Usage: *./custom_list_vms.py http://172.27.3.50 root MY_PASSWORD*
 
-
-
-
-
+For the results please refer output.txt file
 
 
 References:
 https://www.citrix.com/downloads/xenserver/product-software/xenserver-70-standard-edition.html
-
