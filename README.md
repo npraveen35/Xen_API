@@ -10,6 +10,7 @@ Nagios Server [Server node which monitors client machines]
 *STEP 1:*
 
 sudo apt-get update -y
+
 sudo apt install nagios3 nagios-nrpe-plugin vnstat -y
 
 It prompts for postfix - mail configuraitons. I selected No Configuration.
@@ -124,7 +125,7 @@ Next, edit /etc/nagios3/conf.d/infics-praveen-odl.cfg to replace the hostname pr
 
 sudo service nagios3 restart
 
-Nagios Client Mahcines [Hosts to be monitored]
+Nagios Client Machines [host to be monitored]
 ==============================================
  * OS: Ubuntu 14.04 Desktop.
  * IP:172.27.3.176
@@ -133,13 +134,14 @@ Nagios Client Mahcines [Hosts to be monitored]
 *STEP 12:*
 
 sudo apt-get update -y
+
 sudo apt-get dist-upgrade -y
 
 *STEP 13:* Reboot the node and install the below packages:
 
 sudo apt install nagios-nrpe-server vnstat -y 
 
-*STEP 14:* Place the script check_bandwidth to path /usr/lib/nagios/plugins/
+*STEP 14:* Place the shell script check_bandwidth to path /usr/lib/nagios/plugins/
 
 *STEP 15:* Then edit /etc/nagios/nrpe.cfg 
 
@@ -147,13 +149,14 @@ sudo apt install nagios-nrpe-server vnstat -y
 
 *STEP 16:* Add below in the command definition area of npre.cfg file:
 
-command[check_bandwidth]=/usr/lib/nagios/plugins/check_bandwidth 100 500 100 500
+    command[check_bandwidth]=/usr/lib/nagios/plugins/check_bandwidth 100 500 100 500
 
 It resembles as below:
 
 ![alt tag](https://github.com/npraveen35/Xen_API/blob/nagios/command_definition_nrpe_cfg.JPG)
 
 *STEP 17:* Finally, restart nagios-nrpe-server on your client machine:
+
 sudo service nagios-nrpe-server restart
 
 *STEP 18:* After that, check in your browser: [Ignore the CRITICAL message as status for Disk Space which is not my priority as of now]
@@ -168,5 +171,5 @@ sudo service nagios-nrpe-server restart
 
 
 
-YET TO COME: Configuring Email Notifications - CRITICAL / SMS Messages - WARNING
-================================================================================
+    YET TO COME: Configuring Email Notifications - CRITICAL / SMS Messages - WARNING
+
