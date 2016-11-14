@@ -9,9 +9,9 @@ Nagios Server [Server node which monitors client machines]
 
 *STEP 1:*
 
-sudo apt-get update -y
+    sudo apt-get update -y
 
-sudo apt install nagios3 nagios-nrpe-plugin vnstat -y
+    sudo apt install nagios3 nagios-nrpe-plugin vnstat -y
 
 It prompts for postfix - mail configuraitons. I selected No Configuration.
 You will be asked to enter a password for the nagiosadmin user.
@@ -23,8 +23,8 @@ It prompts for user/password ==> nagiosadmin / praveen@123
 
 Rename localhost to hostname of your server
 
-sudo mv /etc/nagios3/conf.d/localhost_nagios2.cfg \
-/etc/nagios3/conf.d/infics.cfg
+    sudo mv /etc/nagios3/conf.d/localhost_nagios2.cfg \
+    /etc/nagios3/conf.d/infics.cfg
 
 NOTE: Here infics is my nagios server hostname so i renamed localhost_nagios2.cfg to infics.cfg file and properly replaced the hostname as shown below:
 ![alt tag](https://github.com/npraveen35/Xen_API/blob/nagios/infics_cfg_initial.JPG)
@@ -100,7 +100,7 @@ praveen@infics:/etc/nagios3/conf.d$ cat infics.cfg
 
 *STEP 7:* Restart the nagios daemon to enable the new configuration:
 
-sudo service nagios3 restart
+     sudo service nagios3 restart
 
 *STEP 8:* Access through your browser.
 ![alt tag](https://github.com/npraveen35/Xen_API/blob/nagios/nagios_server.JPG)
@@ -112,8 +112,8 @@ Create a host configuration file for client node. Run the below commands on Nagi
 
 *STEP 9:*
 
-sudo cp /etc/nagios3/conf.d/infics.cfg \
-/etc/nagios3/conf.d/infics-praveen-odl.cfg
+    sudo cp /etc/nagios3/conf.d/infics.cfg \
+    /etc/nagios3/conf.d/infics-praveen-odl.cfg
 
 *STEP 10:*
 Remember to replace infics-praveen-odl with the hostname of your client machine to be monitored.
@@ -123,7 +123,7 @@ Next, edit /etc/nagios3/conf.d/infics-praveen-odl.cfg to replace the hostname pr
 
 *STEP 11:* Restart the nagios daemon to enable the new configuration:
 
-sudo service nagios3 restart
+    sudo service nagios3 restart
 
 Nagios Client Machines [host to be monitored]
 ==============================================
@@ -133,13 +133,13 @@ Nagios Client Machines [host to be monitored]
 
 *STEP 12:*
 
-sudo apt-get update -y
+    sudo apt-get update -y
 
-sudo apt-get dist-upgrade -y
+    sudo apt-get dist-upgrade -y
 
 *STEP 13:* Reboot the node and install the below packages:
 
-sudo apt install nagios-nrpe-server vnstat -y 
+    sudo apt install nagios-nrpe-server vnstat -y 
 
 *STEP 14:* Place the shell script check_bandwidth to path /usr/lib/nagios/plugins/
 
@@ -157,7 +157,7 @@ It resembles as below:
 
 *STEP 17:* Finally, restart nagios-nrpe-server on your client machine:
 
-sudo service nagios-nrpe-server restart
+    sudo service nagios-nrpe-server restart
 
 *STEP 18:* After that, check in your browser: [Ignore the CRITICAL message as status for Disk Space which is not my priority as of now]
 ![alt tag](https://github.com/npraveen35/Xen_API/blob/nagios/services.JPG)
